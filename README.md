@@ -16,3 +16,21 @@ docker compose exec <service_name> python manage.py migrate
     - in our own case, the command will be:
     - docker compose exec blog python manage.py migrate
     - docker compose exec blog python manage.py createsuperuser
+
+
+docker ps
+    - Lists all currently running Docker containers.
+    - Shows container ID, image, command, status, port mappings, and container name.
+
+docker exec -it <container_name_or_id> bash
+    - Starts an interactive shell (bash) inside a running container.
+    - Replace <container_name_or_id> with either the container name (blog-db-1) or ID (dc6ea9bd8502)
+    Command in Action:
+        - docker exec -it dc6ea9bd8502 bash
+        NOTE: This will open an interactive bash shell for the container with the provided ID.
+
+docker stop <container_name_or_id>
+    - This stops a running container
+
+docker start <container_name_or_id>
+    - This starts a container
