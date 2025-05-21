@@ -141,3 +141,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+BACKEND_URLS = [
+    # Our local IP and port used by Nginx
+    "http://192.168.1.194:8080",
+    "http://127.0.0.1:8080",
+    "http://localhost:8080",
+    
+    "http://192.168.1.194:8000", 
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+]
+
+CSRF_TRUSTED_ORIGINS = BACKEND_URLS
