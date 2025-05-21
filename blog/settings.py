@@ -163,3 +163,16 @@ ELASTICSEARCH_DSL = {
         'hosts': 'http://elasticsearch:9200'  # Use Docker internal hostname
     },
 }
+
+
+REDIS_HOST = "redis"
+REDIS_PORT = 6379
+
+
+# CELERY SETTINGS
+CELERY_BROKER_URL = f"redis://{REDIS_HOST}:{REDIS_PORT}/0"
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TASK_SERIALIZER = "json"
+CELERY_TIMEZONE = "UTC"
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
