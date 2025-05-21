@@ -12,3 +12,14 @@ class PostSerializer(serializers.ModelSerializer):
             'date_created', 
             'last_updated'
         ]
+        
+class PostSearchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = [
+            'pk', 
+            'title', 
+            'body', 
+            'date_created', 
+            'last_updated'
+        ]

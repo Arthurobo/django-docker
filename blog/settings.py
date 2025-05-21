@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     # Third Party Apps
     'rest_framework',
     'autoslug',
+    'corsheaders',
+    'django_elasticsearch_dsl',
+    'django_elasticsearch_dsl_drf',
     
     # Local Apps
     'posts',
@@ -154,3 +157,9 @@ BACKEND_URLS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = BACKEND_URLS
+
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': 'http://elasticsearch:9200'  # Use Docker internal hostname
+    },
+}

@@ -39,7 +39,19 @@ services:
       - static_volume:/app/staticfiles
       - media_volume:/app/media
 
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ports:
+      - "9201:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+
 volumes:
   postgres_data:
   static_volume:
   media_volume:
+  es_data:
