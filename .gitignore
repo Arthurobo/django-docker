@@ -195,3 +195,5 @@ celerybeat-schedule.db-wal
 static/
 dev-working-folder/
 dev_reports/
+
+/staticfiles/
