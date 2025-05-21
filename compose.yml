@@ -15,8 +15,9 @@ services:
   blog:
     build: .
     container_name: blog
-    ports:
-      - "8000:8000"
+    # comment out to use only nginx and don't allow requests to blog container directly but to only use nginx
+    # ports:
+    #   - "8000:8000"
     depends_on:
       - db
     env_file:
@@ -37,7 +38,6 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - static_volume:/app/staticfiles
       - media_volume:/app/media
-
 
 volumes:
   postgres_data:
