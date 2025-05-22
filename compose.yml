@@ -46,6 +46,17 @@ services:
     volumes:
       - .:/app
 
+  celery-beat:
+    build: .
+    container_name: celery-beat
+    command: celery -A blog beat --loglevel=info
+    depends_on:
+      - blog
+      - redis
+    env_file:
+      - .env
+    volumes:
+      - .:/app
       
   nginx:
     image: nginx:latest
