@@ -79,3 +79,6 @@ docker start <container_name_or_id>
 2. Use volume mounting (`-v`) during development for live code changes
 3. Remember to run migrations after any database schema changes
 4. Use `docker ps` to verify container status before running management commands
+
+## To Remove all containers (both running and stopped) use the command below
+`docker rm $(docker ps -aq)`
